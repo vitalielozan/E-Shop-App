@@ -43,7 +43,7 @@ function ProductPage() {
         <Image
           src={image || "/placeholder.jpg"}
           alt={title}
-          className="mb-4 h-auto w-auto rounded-xl object-cover shadow-md"
+          className="mb-4 w-full rounded-xl object-cover shadow-md"
         />
         <h1 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
           {title}

@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
           isZoomed
           src={product.image}
           alt={product.title}
-          className="h-44 w-full rounded-t object-cover"
+          className="mx-auto h-48 w-full rounded-t object-cover px-10"
         />
       </CardHeader>
 
@@ -34,7 +34,7 @@ export default function ProductCard({ product }) {
         <Button
           as={Link}
           to={`/product/${product.id}`}
-          className="bg-black text-white dark:bg-cyan-600 dark:text-gray-900"
+          className="rounded-lg bg-gradient-to-r from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105"
           fullWidth
         >
           View Details
