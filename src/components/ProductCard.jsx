@@ -1,0 +1,45 @@
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Image,
+  Button,
+} from "@heroui/react";
+import { Link } from "react-router-dom";
+
+export default function ProductCard({ product }) {
+  return (
+    <Card className="w-full bg-white/80 shadow-xl transition-shadow duration-200 hover:shadow-2xl dark:bg-gray-900/80">
+      <CardHeader className="p-0">
+        <Image
+          isZoomed
+          src={product.image}
+          alt={product.title}
+          className="h-44 w-full rounded-t object-cover"
+        />
+      </CardHeader>
+
+      <CardBody className="space-y-2 p-4">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+          {product.title}
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          {product.shortDesc}
+        </p>
+        <p className="text-md font-bold text-indigo-600">${product.price}</p>
+      </CardBody>
+
+      <CardFooter className="p-4 pt-0">
+        <Button
+          as={Link}
+          to={`/product/${product.id}`}
+          className="bg-black text-white dark:bg-cyan-600 dark:text-gray-900"
+          fullWidth
+        >
+          View Details
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
