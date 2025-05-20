@@ -54,7 +54,7 @@ function ProductPage() {
       </CardHeader>
       <CardBody className="flex flex-col items-center gap-6">
         <span className="text-2xl font-bold text-indigo-600">${price}</span>
-        <Button className="rounded-lg bg-gradient-to-r from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105">
+        <Button className="rounded-lg bg-gray-950 from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105 dark:bg-gradient-to-r">
           Add to Cart
         </Button>
       </CardBody>

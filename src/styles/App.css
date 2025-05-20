@@ -1,6 +1,0 @@
-html,
-body,
-#root,
-[data-overlay-container] {
-  @apply h-full;
-}

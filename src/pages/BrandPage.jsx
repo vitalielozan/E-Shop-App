@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useFetchProducts } from "../hooks/useFetchProducts.js";
 import ProductCard from "../components/ProductCard.jsx";
+import MotionDiv from "../components/MotionDiv.jsx";
 import { Spinner } from "@heroui/react";
 
 export default function BrandPage() {
@@ -40,11 +41,13 @@ export default function BrandPage() {
           No products found for {brandName}.
         </p>
       ) : (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <MotionDiv>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </MotionDiv>
       )}
     </>
   );
