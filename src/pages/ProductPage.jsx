@@ -6,6 +6,7 @@ import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Image,
 } from "@heroui/react";
 
@@ -51,6 +52,20 @@ function ProductPage() {
     alert("Your product is added to cart!");
   };
 
+  const handleAddToFavorite = () => {
+    const favorit = JSON.parse(localStorage.getItem("favorit")) || [];
+
+    const alredyInFavorit = favorit.some((item) => item.id === id);
+    if (alredyInFavorit) {
+      alert("This product is alredy in Favorit!");
+      return;
+    }
+
+    favorit.push(product);
+    localStorage.setItem("favorit", JSON.stringify(favorit));
+    alert("Your product is added to favorite!");
+  };
+
   return (
     <Card className="mx-auto max-w-2xl rounded-2xl bg-white/80 px-6 py-10 shadow-2xl dark:bg-gray-900/80 sm:px-8 lg:px-10">
       <CardHeader className="flex flex-col items-center justify-center gap-4">
@@ -78,13 +93,21 @@ function ProductPage() {
             {typ}
           </p>
         </div>
+      </CardBody>
+      <CardFooter className="justify-around">
         <Button
           onPress={handleAddToCart}
           className="rounded-lg bg-gray-950 from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105 dark:bg-gradient-to-r"
         >
           Add to Cart
         </Button>
-      </CardBody>
+        <Button
+          onPress={handleAddToFavorite}
+          className="rounded-lg bg-gray-950 from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105 dark:bg-gradient-to-r"
+        >
+          Add to Favorite
+        </Button>
+      </CardFooter>
     </Card>
   );
 }
