@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetchProducts } from "../hooks/useFetchProducts.js";
+import { toast } from "react-toastify";
 import {
   Spinner,
   Button,
@@ -43,13 +44,13 @@ function ProductPage() {
 
     const alredyInCart = cart.some((item) => item.id === id);
     if (alredyInCart) {
-      alert("This product is alredy in cart!");
+      toast.warning("This product is alredy in cart!");
       return;
     }
 
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Your product is added to cart!");
+    toast.success("Your product is added to cart!");
   };
 
   const handleAddToFavorite = () => {
@@ -57,13 +58,13 @@ function ProductPage() {
 
     const alredyInFavorit = favorit.some((item) => item.id === id);
     if (alredyInFavorit) {
-      alert("This product is alredy in Favorit!");
+      toast.warning("This product is alredy in Favorit!");
       return;
     }
 
     favorit.push(product);
     localStorage.setItem("favorit", JSON.stringify(favorit));
-    alert("Your product is added to favorite!");
+    toast.success("Your product is added to favorite!");
   };
 
   return (
