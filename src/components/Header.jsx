@@ -5,6 +5,7 @@ import { Disclosure, DisclosureButton } from "@headlessui/react";
 import { AnimatePresence } from "framer-motion";
 import AnimatedMobileMenu from "./AnimatedMobileMenu.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
+import SearchBar from "./SearchBar.jsx";
 
 function Header() {
   return (
@@ -17,6 +18,7 @@ function Header() {
               <Link to="/">TV-Maxx</Link>
             </h1>
             <ThemeToggle />
+
             <div className="hidden space-x-6 md:flex">
               <Link
                 to="/"
@@ -42,6 +44,7 @@ function Header() {
               >
                 Login
               </Link>
+              <SearchBar />
             </div>
 
             <DisclosureButton className="text-2xl text-gray-800 dark:text-gray-300 md:hidden">

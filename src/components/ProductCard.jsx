@@ -8,7 +8,7 @@ import {
 } from "@heroui/react";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ product }) {
+function ProductCard({ product }) {
   return (
     <Card className="w-full bg-white/80 shadow-xl transition-shadow duration-200 hover:shadow-2xl dark:bg-gray-900/80">
       <CardHeader className="p-0">
@@ -43,3 +43,5 @@ export default function ProductCard({ product }) {
     </Card>
   );
 }
+
+export default ProductCard;

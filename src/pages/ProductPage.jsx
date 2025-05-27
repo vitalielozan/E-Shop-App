@@ -28,7 +28,7 @@ function ProductPage() {
   if (error)
     return (
       <div className="py-10 text-center text-red-500">
-        Eroare la încărcare produs.
+        Error loading product.
       </div>
     );
 

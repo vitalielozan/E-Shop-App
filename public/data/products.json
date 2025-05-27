@@ -144,6 +144,28 @@
       "category": "tv",
       "rating": 3.5,
       "size": "65\""
+    },
+    {
+      "id": "15",
+      "title": "JVC Smart TV 70\"",
+      "price": 544.99,
+      "image": "/images/jvc_70.jpg",
+      "shortDesc": "70\" JVC Smart TV with HDR and Wi-Fi",
+      "description": "JVC 70\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
+      "category": "tv",
+      "rating": 3.5,
+      "size": "70\""
+    },
+    {
+      "id": "16",
+      "title": "JVC Smart TV 77\"",
+      "price": 544.99,
+      "image": "/images/jvc_77.jpg",
+      "shortDesc": "77\" JVC Smart TV with HDR and Wi-Fi",
+      "description": "JVC 77\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
+      "category": "tv",
+      "rating": 3.5,
+      "size": "77\""
     }
   ],
   "Panasonic": [
@@ -272,17 +294,6 @@
     },
     {
       "id": "33",
-      "title": "LG Smart TV 55\"",
-      "price": 534.99,
-      "image": "/images/lg_55.jpg",
-      "shortDesc": "55\" LG Smart TV with HDR and Wi-Fi",
-      "description": "LG 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
-      "category": "tv",
-      "rating": 3.5,
-      "size": "55\""
-    },
-    {
-      "id": "34",
       "title": "LG Smart TV 65\"",
       "price": 584.99,
       "image": "/images/lg_65.jpg",
@@ -291,6 +302,39 @@
       "category": "tv",
       "rating": 3.5,
       "size": "65\""
+    },
+    {
+      "id": "34",
+      "title": "LG Smart TV 75\"",
+      "price": 584.99,
+      "image": "/images/lg_75.jpg",
+      "shortDesc": "75\" LG Smart TV with HDR and Wi-Fi",
+      "description": "LG 75\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
+      "category": "tv",
+      "rating": 3.5,
+      "size": "75\""
+    },
+    {
+      "id": "35",
+      "title": "LG Smart TV 43\"",
+      "price": 534.99,
+      "image": "/images/lg_43.jpg",
+      "shortDesc": "43\" LG Smart TV with HDR and Wi-Fi",
+      "description": "LG 43\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
+      "category": "tv",
+      "rating": 3.5,
+      "size": "43\""
+    },
+    {
+      "id": "36",
+      "title": "LG Smart TV 55\"",
+      "price": 784.99,
+      "image": "/images/lg_55.jpg",
+      "shortDesc": "55\" LG Smart TV with HDR and Wi-Fi",
+      "description": "LG 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
+      "category": "tv",
+      "rating": 3.5,
+      "size": "55\""
     }
   ],
   "Sharp": [

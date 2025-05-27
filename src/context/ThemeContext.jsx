@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ThemeContext } from "../context/context.js";
 
-export const ThemeProvider = ({ children }) => {
+function ThemeProvider({ children }) {
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") return true;
@@ -40,4 +40,6 @@ export const ThemeProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
+}
+
+export default ThemeProvider;

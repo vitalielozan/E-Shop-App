@@ -9,6 +9,7 @@ import CheckoutPage from "../pages/CheckoutPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import BrandPage from "../pages/BrandPage.jsx";
 import NotFoundPage from "../pages/NotFoundPage.jsx";
+import SearchPage from "../pages/SearchPage.jsx";
 
 function AppRoutes() {
   return (
@@ -19,6 +20,7 @@ function AppRoutes() {
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/brand/:brandName" element={<BrandPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
       </Route>
 

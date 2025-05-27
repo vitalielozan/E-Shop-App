@@ -6,7 +6,7 @@ import {
   fetchRawProductsData,
 } from "../lib/api.js";
 
-export const useFetchProducts = (type = "all", param = null, delay = 1000) => {
+export const useFetchProducts = (type = "all", param = null, delay = 500) => {
   const [data, setData] = useState(type === "id" ? null : []);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

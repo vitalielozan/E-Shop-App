@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router";
 import AppRoutes from "./routes/AppRoutes.jsx";
 import "./styles/App.css";
-import { ThemeProvider } from "./context/ThemeContext.jsx";
+import ThemeProvider from "./context/ThemeContext.jsx";
 
 function App() {
   return (

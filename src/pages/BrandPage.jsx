@@ -6,7 +6,11 @@ import { Spinner } from "@heroui/react";
 
 export default function BrandPage() {
   const { brandName } = useParams();
-  const { data: products, loading } = useFetchProducts("brand", brandName);
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetchProducts("brand", brandName);
 
   const brandDesc = {
     Samsung: "Samsung, modern innovative electronics for smart living",
@@ -27,6 +31,13 @@ export default function BrandPage() {
           label="Loading..."
           labelColor="primary"
         />
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="py-10 text-center text-red-500">
+        Error loading product.
       </div>
     );
 
