@@ -45,10 +45,13 @@ function CartPage() {
           </Button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {cartItems.map((item, index) => (
-            <MotionDiv key={index}>
-              <Card className="w-full bg-white/80 shadow-xl transition-shadow duration-200 hover:shadow-2xl dark:bg-gray-900/80">
+        <MotionDiv>
+          <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {cartItems.map((item, index) => (
+              <Card
+                key={index}
+                className="w-full bg-white/80 shadow-xl transition-shadow duration-200 hover:shadow-2xl dark:bg-gray-900/80"
+              >
                 <CardHeader className="p-0">
                   <Image
                     isZoomed
@@ -80,9 +83,9 @@ function CartPage() {
                   </Button>
                 </CardFooter>
               </Card>
-            </MotionDiv>
-          ))}
-        </div>
+            ))}
+          </div>
+        </MotionDiv>
       )}
     </div>
   );
