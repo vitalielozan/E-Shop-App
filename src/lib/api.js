@@ -5,6 +5,8 @@ const API_URL = "/data/products.json";
 export const fetchAllProducts = async () => {
   try {
     const res = await axios.get(API_URL);
+    console.log(res.data);
+    console.log(Object.values(res.data).flat());
     return Object.values(res.data).flat();
   } catch (error) {
     console.error("Eroare la fetchAllProducts:", error.message);

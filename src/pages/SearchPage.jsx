@@ -47,7 +47,7 @@ function SearchPage() {
     );
   }
 
-  if (error) return <p className="p-4 text-red-500">Eroare: {error.message}</p>;
+  if (error) return <p className="p-4 text-red-500">Error: {error.message}</p>;
 
   return (
     <div className="p-4">
@@ -57,15 +57,15 @@ function SearchPage() {
         </h2>
 
         <div className="mb-4">
-          <label className="mb-1 block font-medium">Sortare după preț:</label>
+          <label className="mb-1 block font-medium">Sort by price:</label>
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
             className="rounded-lg border px-3 py-2"
           >
-            <option value="default">Implicit</option>
-            <option value="priceAsc">Preț crescător</option>
-            <option value="priceDesc">Preț descrescător</option>
+            <option value="default">Default</option>
+            <option value="priceAsc">Ascending price</option>
+            <option value="priceDesc">Descending price</option>
           </select>
         </div>
       </div>
