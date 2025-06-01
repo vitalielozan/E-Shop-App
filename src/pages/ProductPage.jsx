@@ -19,6 +19,7 @@ function ProductPage() {
   const [inCart, setInCart] = useState(false);
   const [inFavorite, setInFavorite] = useState(false);
   const { data: product, loading, error } = useFetchProducts("id", id);
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -29,6 +30,10 @@ function ProductPage() {
   }, [id, product]);
 
   const handleAddToCart = () => {
+    if (!isLoggedIn) {
+      toast.warning("Log in to add this items to your cart!");
+      return;
+    }
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (inCart) {
       toast.warning("This product is already in cart!");
@@ -50,6 +55,10 @@ function ProductPage() {
   };
 
   const handleAddToFavorite = () => {
+    if (!isLoggedIn) {
+      toast.warning("Log in to add this items to your cart!");
+      return;
+    }
     const fav = JSON.parse(localStorage.getItem("favorit")) || [];
     if (inFavorite) {
       toast.warning("This product is already in favorites!");

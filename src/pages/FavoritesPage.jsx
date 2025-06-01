@@ -4,6 +4,7 @@ import EmptyMasage from "../components/EmptyMasage.jsx";
 import { messages } from "../constants/constants.js";
 import { toast } from "react-toastify";
 import { ShoppingCart, Trash2 } from "lucide-react";
+import { useNavigate } from "react-router";
 import {
   Card,
   CardHeader,
@@ -14,7 +15,15 @@ import {
 } from "@heroui/react";
 
 function FavoritesPage() {
+  const navigate = useNavigate();
   const [favoritItems, setFavoritItems] = useState([]);
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn !== "true") {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     const storedFavorit = localStorage.getItem("favorit");
