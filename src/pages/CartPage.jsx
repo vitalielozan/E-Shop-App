@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import EmptyMasage from "../components/EmptyMasage.jsx";
 import { messages } from "../constants/constants.js";
+import MotionDiv from "../components/MotionDiv.jsx";
+import { Trash2 } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -9,7 +11,6 @@ import {
   Button,
   Image,
 } from "@heroui/react";
-import MotionDiv from "../components/MotionDiv.jsx";
 
 function CartPage() {
   const [cartItems, setCartItems] = useState([]);
@@ -66,11 +67,11 @@ function CartPage() {
 
                 <CardFooter className="p-4 pt-0">
                   <Button
-                    className="rounded-lg bg-gray-950 from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105 dark:bg-gradient-to-r"
+                    className="rounded-full bg-red-600 px-4 py-2 text-white shadow hover:scale-105"
                     onPress={() => handleRemoveFromCart(index)}
                     fullWidth
                   >
-                    Delete
+                    <Trash2 className="h-5 w-5" />
                   </Button>
                 </CardFooter>
               </Card>

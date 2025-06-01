@@ -3,6 +3,7 @@ import MotionDiv from "../components/MotionDiv.jsx";
 import EmptyMasage from "../components/EmptyMasage.jsx";
 import { messages } from "../constants/constants.js";
 import { toast } from "react-toastify";
+import { ShoppingCart, Trash2 } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -24,7 +25,6 @@ function FavoritesPage() {
 
   const handleAddToCartFromFavorite = (product) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const favorit = JSON.parse(localStorage.getItem("favorit")) || [];
     const alredyInCart = cart.some((item) => item.id === product.id);
     if (alredyInCart) {
       toast.warning("This product is alredy in cart!");
@@ -34,10 +34,15 @@ function FavoritesPage() {
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
     toast.success("Your product is added to cart!");
+  };
 
-    const updatedFavorites = favorit.filter((item) => item.id !== product.id);
+  const handleRemoveFromFavorite = (productId) => {
+    const updatedFavorites = favoritItems.filter(
+      (item) => item.id !== productId,
+    );
     localStorage.setItem("favorit", JSON.stringify(updatedFavorites));
     setFavoritItems(updatedFavorites);
+    toast.info("Removed from favorites.");
   };
 
   return (
@@ -74,10 +79,16 @@ function FavoritesPage() {
                 <CardFooter className="justify-around">
                   <Button
                     onPress={() => handleAddToCartFromFavorite(item)}
-                    className="rounded-lg bg-gray-950 from-cyan-600 to-indigo-600 px-6 py-3 text-white shadow-lg transition-transform hover:scale-105 dark:bg-gradient-to-r"
-                    fullWidth
+                    className="rounded-full bg-gray-900 px-4 py-2 text-white shadow hover:scale-105"
                   >
-                    Add to Cart
+                    <ShoppingCart className="h-5 w-5" />
+                  </Button>
+
+                  <Button
+                    onPress={() => handleRemoveFromFavorite(item.id)}
+                    className="rounded-full bg-red-600 px-4 py-2 text-white shadow hover:scale-105"
+                  >
+                    <Trash2 className="h-5 w-5" />
                   </Button>
                 </CardFooter>
               </Card>
