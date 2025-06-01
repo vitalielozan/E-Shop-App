@@ -10,6 +10,7 @@ import {
   CardFooter,
   Image,
 } from "@heroui/react";
+import ImageCarousel from "../components/ImageCarousel.jsx";
 
 function ProductPage() {
   const { id } = useParams();
@@ -37,7 +38,9 @@ function ProductPage() {
   if (!product || Array.isArray(product))
     return <p className="py-10 text-center text-red-500">Product not found.</p>;
 
-  const { title, description, price, image, typ, rating } = product;
+  const { title, description, price, images, typ, rating } = product;
+
+  const imagesArr = Array.isArray(images) ? images : [images];
 
   const handleAddToCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -70,11 +73,7 @@ function ProductPage() {
   return (
     <Card className="mx-auto max-w-2xl rounded-2xl bg-white/80 px-6 py-10 shadow-2xl dark:bg-gray-900/80 sm:px-8 lg:px-10">
       <CardHeader className="flex flex-col items-center justify-center gap-4">
-        <Image
-          src={image || "/placeholder.jpg"}
-          alt={title}
-          className="mb-4 w-full rounded-xl object-cover shadow-md"
-        />
+        <ImageCarousel srcArray={imagesArr} />
         <h1 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
           {title}
         </h1>
