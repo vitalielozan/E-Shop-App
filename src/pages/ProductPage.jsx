@@ -51,7 +51,7 @@ function ProductPage() {
   const { title, description, price, images, typ, rating } = product;
   const imagesArr = Array.isArray(images) ? images : [images];
   const isInCart = cart.some((item) => item.id === Number(id));
-  const isFavorite = favorites.some((item) => item.id === Number(id));
+  const isInFavorites = favorites.some((item) => item.id === Number(id));
 
   return (
     <Card className="mx-auto max-w-2xl rounded-2xl bg-white/80 px-6 py-10 shadow-2xl dark:bg-gray-900/80 sm:px-8 lg:px-10">
@@ -96,17 +96,17 @@ function ProductPage() {
 
         <Button
           onPress={
-            isFavorite
+            isInFavorites
               ? () => removeFromFavorites(product.id)
               : () => addToFavorites(product)
           }
           className={`rounded-full px-4 py-2 text-white shadow hover:scale-105 ${
-            isFavorite ? "bg-pink-600" : "bg-gray-900"
+            isInFavorites ? "bg-pink-600" : "bg-gray-900"
           }`}
         >
           <Heart
             className="h-5 w-5"
-            fill={isFavorite ? "currentColor" : "none"}
+            fill={isInFavorites ? "currentColor" : "none"}
           />
         </Button>
       </CardFooter>

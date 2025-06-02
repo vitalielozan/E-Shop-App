@@ -3,9 +3,14 @@ import { CartFavContext } from "./context.js";
 import { toast } from "react-toastify";
 
 function CartFavProvider({ children }) {
+  const currentUser = localStorage.getItem("currentUser");
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem("cart");
+      const saved = currentUser
+        ? localStorage.getItem(`cart_${currentUser}`)
+        : null;
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -13,21 +18,29 @@ function CartFavProvider({ children }) {
   });
   const [favorites, setFavorites] = useState(() => {
     try {
-      const saved = localStorage.getItem("favorites");
+      const saved = currentUser
+        ? localStorage.getItem(`favorites_${currentUser}`)
+        : null;
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
     }
   });
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    if (currentUser) {
+      localStorage.setItem(`cart_${currentUser}`, JSON.stringify(cart));
+    }
+  }, [cart, currentUser]);
 
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
+    if (currentUser) {
+      localStorage.setItem(
+        `favorites_${currentUser}`,
+        JSON.stringify(favorites),
+      );
+    }
+  }, [favorites, currentUser]);
 
   const addToCart = (product) => {
     if (!isLoggedIn) {
@@ -80,6 +93,7 @@ function CartFavProvider({ children }) {
         cart,
         favorites,
         addToCart,
+        currentUser,
         removeFromCart,
         addToFavorites,
         removeFromFavorites,
