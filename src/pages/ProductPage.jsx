@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetchProducts } from "../hooks/useFetchProducts.js";
 import { Heart, ShoppingCart, Trash2 } from "lucide-react";
-import { toast } from "react-toastify";
+import { useCartFav } from "../hooks/useCartFav.js";
+import ImageCarousel from "../components/ImageCarousel.jsx";
 import {
   Spinner,
   Button,
@@ -12,72 +13,18 @@ import {
   CardFooter,
   Image,
 } from "@heroui/react";
-import ImageCarousel from "../components/ImageCarousel.jsx";
 
 function ProductPage() {
   const { id } = useParams();
-  const [inCart, setInCart] = useState(false);
-  const [inFavorite, setInFavorite] = useState(false);
+  const {
+    cart,
+    favorites,
+    addToCart,
+    removeFromCart,
+    addToFavorites,
+    removeFromFavorites,
+  } = useCartFav();
   const { data: product, loading, error } = useFetchProducts("id", id);
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-  useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const fav = JSON.parse(localStorage.getItem("favorit")) || [];
-
-    setInCart(cart.some((item) => item.id === id));
-    setInFavorite(fav.some((item) => item.id === id));
-  }, [id, product]);
-
-  const handleAddToCart = () => {
-    if (!isLoggedIn) {
-      toast.warning("Log in to add this items to your cart!");
-      return;
-    }
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    if (inCart) {
-      toast.warning("This product is already in cart!");
-      return;
-    }
-
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    toast.success("Your product was added to cart!");
-    setInCart(true);
-  };
-
-  const handleRemoveFromCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const updated = cart.filter((item) => item.id !== id);
-    localStorage.setItem("cart", JSON.stringify(updated));
-    toast.success("Removed from cart!");
-    setInCart(false);
-  };
-
-  const handleAddToFavorite = () => {
-    if (!isLoggedIn) {
-      toast.warning("Log in to add this items to your cart!");
-      return;
-    }
-    const fav = JSON.parse(localStorage.getItem("favorit")) || [];
-    if (inFavorite) {
-      toast.warning("This product is already in favorites!");
-      return;
-    }
-
-    fav.push(product);
-    localStorage.setItem("favorit", JSON.stringify(fav));
-    toast.success("Added to favorites!");
-    setInFavorite(true);
-  };
-
-  const handleRemoveFromFavorite = () => {
-    const fav = JSON.parse(localStorage.getItem("favorit")) || [];
-    const updated = fav.filter((item) => item.id !== id);
-    localStorage.setItem("favorit", JSON.stringify(updated));
-    toast.success("Removed from favorites!");
-    setInFavorite(false);
-  };
 
   if (loading)
     return (
@@ -102,8 +49,9 @@ function ProductPage() {
     return <p className="py-10 text-center text-red-500">Product not found.</p>;
 
   const { title, description, price, images, typ, rating } = product;
-
   const imagesArr = Array.isArray(images) ? images : [images];
+  const isInCart = cart.some((item) => item.id === Number(id));
+  const isFavorite = favorites.some((item) => item.id === Number(id));
 
   return (
     <Card className="mx-auto max-w-2xl rounded-2xl bg-white/80 px-6 py-10 shadow-2xl dark:bg-gray-900/80 sm:px-8 lg:px-10">
@@ -130,16 +78,16 @@ function ProductPage() {
         </div>
       </CardBody>
       <CardFooter className="justify-around">
-        {inCart ? (
+        {isInCart ? (
           <Button
-            onPress={handleRemoveFromCart}
+            onPress={() => removeFromCart(product.id)}
             className="rounded-full bg-red-600 px-4 py-2 text-white shadow hover:scale-105"
           >
             <Trash2 className="h-5 w-5" />
           </Button>
         ) : (
           <Button
-            onPress={handleAddToCart}
+            onPress={() => addToCart(product)}
             className="rounded-full bg-gray-900 px-4 py-2 text-white shadow hover:scale-105"
           >
             <ShoppingCart className="h-5 w-5" />
@@ -147,14 +95,18 @@ function ProductPage() {
         )}
 
         <Button
-          onPress={inFavorite ? handleRemoveFromFavorite : handleAddToFavorite}
+          onPress={
+            isFavorite
+              ? () => removeFromFavorites(product.id)
+              : () => addToFavorites(product)
+          }
           className={`rounded-full px-4 py-2 text-white shadow hover:scale-105 ${
-            inFavorite ? "bg-pink-600" : "bg-gray-900"
+            isFavorite ? "bg-pink-600" : "bg-gray-900"
           }`}
         >
           <Heart
             className="h-5 w-5"
-            fill={inFavorite ? "currentColor" : "none"}
+            fill={isFavorite ? "currentColor" : "none"}
           />
         </Button>
       </CardFooter>

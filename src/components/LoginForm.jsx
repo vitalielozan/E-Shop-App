@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "@heroui/react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 function LoginForm() {
   const [error, setError] = useState(null);
@@ -20,6 +21,7 @@ function LoginForm() {
     if (foundUser) {
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("currentUser", JSON.stringify(foundUser));
+      toast.success(`Wellcome dear ! ${foundUser.email}`);
       navigate("/");
     } else {
       setError("Incorrect email or password.");

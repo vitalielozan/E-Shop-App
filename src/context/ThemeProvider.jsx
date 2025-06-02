@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ThemeContext } from "../context/context.js";
+import { ThemeContext } from "./context.js";
 
 function ThemeProvider({ children }) {
   const getInitialTheme = () => {

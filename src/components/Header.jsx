@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import AnimatedMobileMenu from "./AnimatedMobileMenu.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
 import SearchBar from "./SearchBar.jsx";
+import LogOut from "./LogOut.jsx";
 
 function Header() {
   return (
@@ -44,6 +45,7 @@ function Header() {
               >
                 Login
               </Link>
+              <LogOut />
               <SearchBar />
             </div>
 
