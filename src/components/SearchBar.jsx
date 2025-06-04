@@ -31,7 +31,7 @@ function SearchBar() {
         radius="full"
         color="primary"
         variant="flat"
-        className="bg-gray-700 from-cyan-600 to-indigo-600 text-white dark:bg-gradient-to-r dark:text-white"
+        className="bg-gray-900 from-cyan-600 to-indigo-600 text-white dark:bg-gradient-to-r dark:text-white"
       >
         Go
       </Button>

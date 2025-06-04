@@ -48,7 +48,7 @@ function ProductPage() {
   if (!product || Array.isArray(product))
     return <p className="py-10 text-center text-red-500">Product not found.</p>;
 
-  const { title, description, price, images, typ, rating } = product;
+  const { title, description, price, images } = product;
   const imagesArr = Array.isArray(images) ? images : [images];
   const isInCart = cart.some((item) => item.id === Number(id));
   const isInFavorites = favorites.some((item) => item.id === Number(id));
@@ -66,16 +66,6 @@ function ProductPage() {
       </CardHeader>
       <CardBody className="flex flex-col items-center gap-6">
         <span className="text-2xl font-bold text-indigo-600">${price}</span>
-        <div className="justify-content-between align-items-center flex gap-6 text-lg text-gray-500 dark:text-gray-300">
-          <p>
-            Rating <br />
-            {rating}
-          </p>
-          <p>
-            Produkttyp <br />
-            {typ}
-          </p>
-        </div>
       </CardBody>
       <CardFooter className="justify-around">
         {isInCart ? (

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "@heroui/react";
+import { useAuthContext } from "../hooks/useAuthContext.js";
 
 function RegisterForm({ onRegisterSuccess }) {
   const [action, setAction] = useState(null);
-
+  const { users, setUsers } = useAuthContext();
   const validatePassword = (value) => {
     if (value.length < 6) return "Password must be at 6 characters";
     if (!/A-Z/.test(value))
@@ -19,22 +20,21 @@ function RegisterForm({ onRegisterSuccess }) {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-
     const alreadyExists = users.some((user) => user.email === data.email);
     if (alreadyExists) {
       setAction("This email is already registered!");
     } else {
-      users.push(data);
-      localStorage.setItem("users", JSON.stringify(users));
+      setUsers((prevUsers) => {
+        const updatedUsers = [...prevUsers, data];
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+      });
       setAction("Account created successfully! You can now log in.");
 
       setTimeout(() => {
         if (onRegisterSuccess) {
           onRegisterSuccess();
         }
-      }, 1500);
+      }, 1000);
     }
   };
 

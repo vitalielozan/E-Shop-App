@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "@heroui/react";
 import { useNavigate } from "react-router";
+import { useAuthContext } from "../hooks/useAuthContext.js";
 import { toast } from "react-toastify";
 
 function LoginForm() {
   const [error, setError] = useState(null);
+  const { users, login } = useAuthContext();
   const navigate = useNavigate();
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-
     const foundUser = users.find(
       (user) => user.email === data.email && user.password === data.password,
     );
     if (foundUser) {
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("currentUser", JSON.stringify(foundUser));
+      login(foundUser);
       toast.success(`Wellcome dear ! ${foundUser.email}`);
       navigate("/");
     } else {
@@ -41,7 +38,6 @@ function LoginForm() {
         placeholder="Enter your email"
         type="email"
       />
-
       <Input
         isRequired
         label="Passwort"
@@ -50,7 +46,6 @@ function LoginForm() {
         placeholder="Enter your Passwort"
         type="password"
       />
-
       <div className="flex gap-2">
         <Button color="primary" type="submit">
           Login

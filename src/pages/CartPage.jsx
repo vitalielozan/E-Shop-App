@@ -5,6 +5,7 @@ import MotionDiv from "../components/MotionDiv.jsx";
 import { Trash2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useCartFav } from "../hooks/useCartFav.js";
+import { useAuthContext } from "../hooks/useAuthContext.js";
 import {
   Card,
   CardHeader,
@@ -16,13 +17,13 @@ import {
 function CartPage() {
   const navigate = useNavigate();
   const { cart, removeFromCart } = useCartFav();
+  const { isLoggedIn } = useAuthContext();
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn !== "true") {
+    if (!isLoggedIn) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [navigate, isLoggedIn]);
 
   return (
     <div className="p-3 text-center">

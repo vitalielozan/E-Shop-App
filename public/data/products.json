@@ -14,7 +14,7 @@
       "shortDesc": "32\" Samsung Smart TV with HDR and Wi-Fi",
       "description": "Samsung 32\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 4.1,
+      "rating": 0,
       "typ": "32\""
     },
     {
@@ -31,7 +31,7 @@
       "shortDesc": "40\" Samsung Smart TV with HDR and Wi-Fi",
       "description": "Samsung 40\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "40\""
     },
     {
@@ -48,7 +48,7 @@
       "shortDesc": "43\" Samsung Smart TV with HDR and Wi-Fi",
       "description": "Samsung 43\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "43\""
     },
     {
@@ -65,7 +65,7 @@
       "shortDesc": "50\" Samsung Smart TV with HDR and Wi-Fi",
       "description": "Samsung 50\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "50\""
     },
     {
@@ -82,7 +82,7 @@
       "shortDesc": "55\" SAMSUNG OLEDGQ55S85F 4K Vision AI Smart OLED TV (55 Zoll / 138 cm, UHD 4K, SMART TV, Tizen™ Smart TV)",
       "description": "Samsung 55\" Smart TV with ultra 4K Vision AI Smart OLED TV, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "ultra 4K"
     },
     {
@@ -99,7 +99,7 @@
       "shortDesc": "65\" SAMSUNG GU65DU7170U LED TV (Flat, 65 Zoll / 163 cm, UHD 4K, SMART TV, Tizen)",
       "description": "Samsung 65\" Smart TV with LED TV resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "Led TV"
     },
     {
@@ -116,7 +116,7 @@
       "shortDesc": "98\" SAMSUNG GU98DU9079U LED TV (Flat, 98 Zoll / 249 cm, UHD 4K, SMART TV, Tizen)",
       "description": "Samsung 98\" Smart TV with LED TV and UHD 4K resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "UHD 4K"
     },
     {
@@ -133,7 +133,7 @@
       "shortDesc": "SAMSUNG OLEDGQ77S85F 4K Vision AI Smart OLED TV (77 Zoll / 195 cm, UHD 4K, SMART TV, Tizen™ Smart TV)",
       "description": "Samsung 77\" Smart TV with 4K Vision AI Smart OLED TV  resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "4K OLED"
     }
   ],
@@ -152,7 +152,7 @@
       "shortDesc": "32\" JVC LT-32VH5355 LED TV (Flat, 32 Zoll / 81,28 cm, HD, SMART TV)",
       "description": "JVC 32\" Smart TV with HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 4.1,
+      "rating": 0,
       "typ": "Led TV"
     },
     {
@@ -169,7 +169,7 @@
       "shortDesc": "40\" JVC Smart TV with HDR and Wi-Fi",
       "description": "JVC 40\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "40\""
     },
     {
@@ -186,7 +186,7 @@
       "shortDesc": "50\" JVC Smart TV with HDR and Wi-Fi",
       "description": "JVC 50\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "50\""
     },
     {
@@ -203,7 +203,7 @@
       "shortDesc": "55\" JVC Smart TV with HDR and Wi-Fi",
       "description": "JVC 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "55\""
     },
     {
@@ -220,7 +220,7 @@
       "shortDesc": "65\" JVC Smart TV with HDR and Wi-Fi",
       "description": "JVC 65\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "65\""
     },
     {
@@ -237,7 +237,7 @@
       "shortDesc": "70\" JVC Smart TV with HDR and Wi-Fi",
       "description": "JVC 70\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "70\""
     },
     {
@@ -254,7 +254,7 @@
       "shortDesc": "77\" JVC Smart TV with HDR and Wi-Fi",
       "description": "JVC 77\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "77\""
     }
   ],
@@ -273,7 +273,7 @@
       "shortDesc": "32\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 32\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 4.1,
+      "rating": 0,
       "typ": "32\""
     },
     {
@@ -290,7 +290,7 @@
       "shortDesc": "40\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 40\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "40\""
     },
     {
@@ -307,7 +307,7 @@
       "shortDesc": "50\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 50\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "50\""
     },
     {
@@ -324,7 +324,7 @@
       "shortDesc": "55\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "55\""
     },
     {
@@ -341,7 +341,7 @@
       "shortDesc": "43\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 43\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "43\""
     },
     {
@@ -358,7 +358,7 @@
       "shortDesc": "77\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "77\""
     },
     {
@@ -375,7 +375,7 @@
       "shortDesc": "65\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 65\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "65\""
     },
     {
@@ -392,7 +392,7 @@
       "shortDesc": "75\" Panasonic Smart TV with HDR and Wi-Fi",
       "description": "Panasonic 75\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "75\""
     }
   ],
@@ -411,7 +411,7 @@
       "shortDesc": "32\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 32\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 4.1,
+      "rating": 0,
       "typ": "32\""
     },
     {
@@ -428,7 +428,7 @@
       "shortDesc": "40\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 40\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "40\""
     },
     {
@@ -445,7 +445,7 @@
       "shortDesc": "50\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 50\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "50\""
     },
     {
@@ -462,7 +462,7 @@
       "shortDesc": "65\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 65\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "65\""
     },
     {
@@ -479,7 +479,7 @@
       "shortDesc": "75\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 75\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "75\""
     },
     {
@@ -496,7 +496,7 @@
       "shortDesc": "43\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 43\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "43\""
     },
     {
@@ -513,7 +513,7 @@
       "shortDesc": "55\" LG Smart TV with HDR and Wi-Fi",
       "description": "LG 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "55\""
     }
   ],
@@ -532,7 +532,7 @@
       "shortDesc": "32\" Sharp Smart TV with HDR and Wi-Fi",
       "description": "Sharp 32\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 4.1,
+      "rating": 0,
       "typ": "32\""
     },
     {
@@ -549,7 +549,7 @@
       "shortDesc": "40\" Sharp Smart TV with HDR and Wi-Fi",
       "description": "Sharp 40\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "40\""
     },
     {
@@ -566,7 +566,7 @@
       "shortDesc": "50\" Sharp Smart TV with HDR and Wi-Fi",
       "description": "Sharp 50\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "50\""
     },
     {
@@ -583,7 +583,7 @@
       "shortDesc": "55\" Sharp Smart TV with HDR and Wi-Fi",
       "description": "Sharp 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "55\""
     },
     {
@@ -600,7 +600,7 @@
       "shortDesc": "65\" Sharp Smart TV with HDR and Wi-Fi",
       "description": "Sharp 65\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "65\""
     },
     {
@@ -617,7 +617,7 @@
       "shortDesc": "75\" Sharp Smart TV with HDR and Wi-Fi",
       "description": "Sharp 75\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "75\""
     }
   ],
@@ -636,7 +636,7 @@
       "shortDesc": "32\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 32\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 4.1,
+      "rating": 0,
       "typ": "32\""
     },
     {
@@ -653,7 +653,7 @@
       "shortDesc": "43\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 43\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "43\""
     },
     {
@@ -670,7 +670,7 @@
       "shortDesc": "50\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 50\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "50\""
     },
     {
@@ -687,7 +687,7 @@
       "shortDesc": "55\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 55\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "55\""
     },
     {
@@ -704,7 +704,7 @@
       "shortDesc": "65\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 65\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "65\""
     },
     {
@@ -721,7 +721,7 @@
       "shortDesc": "70\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 70\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "70\""
     },
     {
@@ -738,7 +738,7 @@
       "shortDesc": "77\" Hisense Smart TV with HDR and Wi-Fi",
       "description": "Hisense 77\" Smart TV with ultra HD resolution, multiple HDMI ports, built-in apps, and wireless connectivity. Ideal for home entertainment.",
       "category": "tv",
-      "rating": 3.5,
+      "rating": 0,
       "typ": "77\""
     }
   ]

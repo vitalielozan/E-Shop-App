@@ -3,6 +3,7 @@ import { motion as Motion, easeOut } from "framer-motion";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
 import LogOut from "./LogOut.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 function AnimatedMobileMenu() {
   return (
@@ -37,6 +38,7 @@ function AnimatedMobileMenu() {
       >
         Login
       </Link>
+      <ThemeToggle />
       <LogOut />
       <SearchBar />
     </Motion.div>

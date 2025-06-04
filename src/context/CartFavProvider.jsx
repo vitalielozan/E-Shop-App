@@ -1,46 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { CartFavContext } from "./context.js";
 import { toast } from "react-toastify";
+import { useAuthContext } from "../hooks/useAuthContext.js";
 
 function CartFavProvider({ children }) {
-  const currentUser = localStorage.getItem("currentUser");
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
+  const { user, isLoggedIn } = useAuthContext();
   const [cart, setCart] = useState(() => {
-    try {
-      const saved = currentUser
-        ? localStorage.getItem(`cart_${currentUser}`)
-        : null;
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
+    if (isLoggedIn && user) {
+      try {
+        const saved = localStorage.getItem(`cart_${user.email}`);
+        return saved ? JSON.parse(saved) : [];
+      } catch {
+        return [];
+      }
     }
+    return [];
   });
   const [favorites, setFavorites] = useState(() => {
-    try {
-      const saved = currentUser
-        ? localStorage.getItem(`favorites_${currentUser}`)
-        : null;
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
+    if (isLoggedIn && user) {
+      try {
+        const saved = localStorage.getItem(`favorites_${user.email}`);
+        return saved ? JSON.parse(saved) : [];
+      } catch {
+        return [];
+      }
     }
+    return [];
   });
 
   useEffect(() => {
-    if (currentUser) {
-      localStorage.setItem(`cart_${currentUser}`, JSON.stringify(cart));
-    }
-  }, [cart, currentUser]);
-
-  useEffect(() => {
-    if (currentUser) {
+    if (isLoggedIn && user) {
+      localStorage.setItem(`cart_${user.email}`, JSON.stringify(cart));
       localStorage.setItem(
-        `favorites_${currentUser}`,
+        `favorites_${user.email}`,
         JSON.stringify(favorites),
       );
     }
-  }, [favorites, currentUser]);
+  }, [cart, user, favorites, isLoggedIn]);
 
   const addToCart = (product) => {
     if (!isLoggedIn) {
@@ -93,7 +89,6 @@ function CartFavProvider({ children }) {
         cart,
         favorites,
         addToCart,
-        currentUser,
         removeFromCart,
         addToFavorites,
         removeFromFavorites,

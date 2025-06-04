@@ -18,7 +18,6 @@ function Header() {
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
               <Link to="/">TV-Maxx</Link>
             </h1>
-            <ThemeToggle />
 
             <div className="hidden space-x-6 md:flex">
               <Link
@@ -45,8 +44,9 @@ function Header() {
               >
                 Login
               </Link>
-              <LogOut />
               <SearchBar />
+              <LogOut />
+              <ThemeToggle />
             </div>
 
             <DisclosureButton className="text-2xl text-gray-800 dark:text-gray-300 md:hidden">

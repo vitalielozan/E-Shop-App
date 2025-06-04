@@ -5,6 +5,7 @@ import { messages } from "../constants/constants.js";
 import { ShoppingCart, Trash2 } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useCartFav } from "../hooks/useCartFav.js";
+import { useAuthContext } from "../hooks/useAuthContext.js";
 import { toast } from "react-toastify";
 import {
   Card,
@@ -17,13 +18,12 @@ import {
 function FavoritesPage() {
   const navigate = useNavigate();
   const { cart, favorites, addToCart, removeFromFavorites } = useCartFav();
-
+  const { isLoggedIn } = useAuthContext();
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn !== "true") {
+    if (!isLoggedIn) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [navigate, isLoggedIn]);
 
   const handleAddToCartFromFavorite = (product) => {
     if (cart.some((item) => item.id === product.id)) {
