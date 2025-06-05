@@ -39,10 +39,13 @@ function FavoritesPage() {
       {favorites.length === 0 ? (
         <EmptyMasage imageSrc="/favorite.png" message={messages.messageFav} />
       ) : (
-        <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {favorites.map((item) => (
-            <MotionDiv key={item.id}>
-              <Card className="w-full bg-white/80 shadow-xl transition-shadow duration-200 hover:shadow-2xl dark:bg-gray-900/80">
+        <MotionDiv>
+          <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {favorites.map((item) => (
+              <Card
+                key={item.id}
+                className="w-full bg-white/80 shadow-xl transition-shadow duration-200 hover:shadow-2xl dark:bg-gray-900/80"
+              >
                 <CardHeader className="p-0">
                   <Image
                     isZoomed
@@ -77,9 +80,9 @@ function FavoritesPage() {
                   </Button>
                 </CardFooter>
               </Card>
-            </MotionDiv>
-          ))}
-        </div>
+            ))}
+          </div>
+        </MotionDiv>
       )}
     </div>
   );

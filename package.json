@@ -13,6 +13,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.3",
     "@heroicons/react": "^2.2.0",
+    "@heroui/input": "^2.4.20",
     "@heroui/react": "^2.7.8",
     "@hookform/resolvers": "^5.0.1",
     "axios": "^1.9.0",

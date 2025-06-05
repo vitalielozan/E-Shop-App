@@ -31,9 +31,26 @@ function AuthProvider({ children }) {
     }
   }, [user]);
 
+  const updateCheckOut = (checkoutData) => {
+    const updatedUser = {
+      ...user,
+      lastCheckout: checkoutData,
+    };
+    setUser(updatedUser);
+    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+  };
+
   return (
     <AuthContext.Provider
-      value={{ user, users, isLoggedIn, login, logout, setUsers }}
+      value={{
+        user,
+        users,
+        updateCheckOut,
+        isLoggedIn,
+        login,
+        logout,
+        setUsers,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -5,7 +5,8 @@ import * as yup from "yup";
 import { useNavigate } from "react-router";
 import { useAuthContext } from "../hooks/useAuthContext.js";
 import { useCartFav } from "../hooks/useCartFav.js";
-import { Form, Input, Button } from "@heroui/react";
+import { Form, Button } from "@heroui/react";
+import { Input } from "@heroui/input";
 
 const schema = yup.object().shape({
   billingAddress: yup.string().required("Billing address is required"),
@@ -17,7 +18,7 @@ const schema = yup.object().shape({
 });
 
 function CheckoutPage() {
-  const { user } = useAuthContext();
+  const { user, updateCheckOut } = useAuthContext();
   const { cart, clearCart } = useCartFav();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -44,7 +45,7 @@ function CheckoutPage() {
   }, [success, navigate]);
 
   const onSubmit = (data) => {
-    console.log(data);
+    updateCheckOut(data);
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -53,19 +54,20 @@ function CheckoutPage() {
       reset();
     }, 2000);
   };
-
+  const size = ["sm", "md", "lg"];
   const total = cart.reduce((acc, item) => acc + item.price, 0);
+
   return (
     <div className="mx-auto max-w-2xl px-4 py-6">
-      <h2 className="font-boldmb-6 text-3xl">Checkout</h2>
+      <h2 className="font-boldmb-6 mb-5 ms-2 text-3xl">Checkout</h2>
       {success ? (
         <div className="rounded-lg bg-green-100 p-4 text-center text-lg text-green-700 shadow">
           Payment successful! Redirecting to homepage...
         </div>
       ) : (
         <>
-          <div className="mb-6 rounded-lg border bg-white/80 p-4 shadow-sm dark:bg-gray-900/80">
-            <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="mb-6 rounded-lg bg-white/80 p-4 shadow-sm dark:bg-gray-900/80">
+            <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
               Order Summary
             </h2>
             <ul className="divide-y divide-gray-200">
@@ -91,7 +93,7 @@ function CheckoutPage() {
                 labelPlacement="outside"
                 type="text"
                 variant="bordered"
-                size="lg"
+                size={size[2]}
                 {...register("billdeingAddress")}
                 error={errors.billingAddress?.message}
               />
@@ -102,7 +104,7 @@ function CheckoutPage() {
                 labelPlacement="outside"
                 type="text"
                 variant="bordered"
-                size="lg"
+                size={size[2]}
                 {...register("shippingAddress")}
                 error={errors.shippingAddress?.message}
               />
@@ -113,7 +115,7 @@ function CheckoutPage() {
                 labelPlacement="outside"
                 type="text"
                 variant="bordered"
-                size="lg"
+                size={size[2]}
                 {...register("cardNumber")}
                 error={errors.cardNumber?.message}
               />
