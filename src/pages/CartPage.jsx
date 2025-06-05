@@ -17,6 +17,7 @@ import {
 function CartPage() {
   const navigate = useNavigate();
   const { cart, removeFromCart } = useCartFav();
+  const total = cart.reduce((acc, item) => acc + item.price, 0);
   const { isLoggedIn } = useAuthContext();
 
   useEffect(() => {
@@ -71,6 +72,19 @@ function CartPage() {
                 </CardFooter>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-8 space-y-4 text-center">
+            <p className="text-xl font-semibold text-gray-700 dark:text-gray-500">
+              Total :{" "}
+              <span className="text-indigo-600">${total.toFixed(2)}</span>
+            </p>
+            <Button
+              className="rounded bg-green-600 px-6 py-2 text-lg font-medium text-white shadow hover:scale-105"
+              onPress={() => navigate("/checkout")}
+            >
+              Proceed to checkout
+            </Button>
           </div>
         </MotionDiv>
       )}

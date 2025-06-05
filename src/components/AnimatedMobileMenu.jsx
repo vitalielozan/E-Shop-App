@@ -36,7 +36,7 @@ function AnimatedMobileMenu() {
         to="/login"
         className="block text-sm text-gray-700 hover:underline dark:text-gray-300"
       >
-        Login
+        LogIn
       </Link>
       <ThemeToggle />
       <LogOut />

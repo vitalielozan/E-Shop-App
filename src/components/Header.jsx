@@ -42,7 +42,7 @@ function Header() {
                 to="/login"
                 className="text-large text-gray-700 hover:underline dark:text-gray-300"
               >
-                Login
+                LogIn
               </Link>
               <SearchBar />
               <LogOut />

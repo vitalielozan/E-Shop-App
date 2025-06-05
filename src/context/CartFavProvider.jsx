@@ -83,12 +83,18 @@ function CartFavProvider({ children }) {
     toast.success("Removed from favorites.");
   };
 
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem(`cart_${user.email}`);
+  };
+
   return (
     <CartFavContext.Provider
       value={{
         cart,
         favorites,
         addToCart,
+        clearCart,
         removeFromCart,
         addToFavorites,
         removeFromFavorites,

@@ -26,13 +26,7 @@ function SearchBar() {
         onChange={(e) => setQuery(e.target.value)}
         className="max-w-xs"
       />
-      <Button
-        type="submit"
-        radius="full"
-        color="primary"
-        variant="flat"
-        className="bg-gray-900 from-cyan-600 to-indigo-600 text-white dark:bg-gradient-to-r dark:text-white"
-      >
+      <Button type="submit" radius="full" color="primary" variant="light">
         Go
       </Button>
     </Form>
