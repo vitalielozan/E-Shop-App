@@ -27,6 +27,7 @@ function RegisterForm({ onRegisterSuccess }) {
       setUsers((prevUsers) => {
         const updatedUsers = [...prevUsers, data];
         localStorage.setItem("users", JSON.stringify(updatedUsers));
+        return updatedUsers;
       });
       setAction("Account created successfully! You can now log in.");
 
