@@ -34,7 +34,7 @@ function ProductCard({ product }) {
         <Button
           as={Link}
           to={`/product/${product.id}`}
-          className="rounded-lg bg-gray-900 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105"
+          className="rounded-lg bg-gray-950 from-cyan-600 to-indigo-600 px-8 py-3 text-white shadow-lg transition-transform hover:scale-105 dark:bg-gradient-to-r"
           fullWidth
         >
           View Details

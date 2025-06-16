@@ -12,7 +12,7 @@ function AppProviders({ children }) {
         <ThemeProvider>
           <CartFavProvider>
             {children}
-            <ToastContainer position="top-right" autoClose={3000} />
+            <ToastContainer position="top-right" autoClose={2000} />
           </CartFavProvider>
         </ThemeProvider>
       </AuthProvider>

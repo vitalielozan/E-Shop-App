@@ -28,7 +28,13 @@ function CheckoutPage() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({ rewsolver: yupResolver(schema) });
+  } = useForm({ resolver: yupResolver(schema) });
+
+  useEffect(() => {
+    if (user?.lastCheckout) {
+      reset(user.lastCheckout);
+    }
+  }, [user, reset]);
 
   useEffect(() => {
     if (!user) navigate("/login");
@@ -94,7 +100,7 @@ function CheckoutPage() {
                 type="text"
                 variant="bordered"
                 size={size[2]}
-                {...register("billdeingAddress")}
+                {...register("billingAddress")}
                 error={errors.billingAddress?.message}
               />
             </div>
