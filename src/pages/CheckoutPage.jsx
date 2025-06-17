@@ -45,7 +45,7 @@ function CheckoutPage() {
     if (success) {
       const timeout = setTimeout(() => {
         navigate("/");
-      }, 3000);
+      }, 5000);
       return () => clearTimeout(timeout);
     }
   }, [success, navigate]);

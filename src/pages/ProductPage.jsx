@@ -4,6 +4,7 @@ import { useFetchProducts } from "../hooks/useFetchProducts.js";
 import { Heart, ShoppingCart, Trash2 } from "lucide-react";
 import { useCartFav } from "../hooks/useCartFav.js";
 import ImageCarousel from "../components/ImageCarousel.jsx";
+import ReviewProduct from "../components/ReviewProduct.jsx";
 import {
   Spinner,
   Button,
@@ -60,11 +61,12 @@ function ProductPage() {
         <h1 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
           {title}
         </h1>
-        <p className="text-center text-lg text-gray-500 dark:text-gray-300">
+        <p className="text-justify text-lg text-gray-500 dark:text-gray-300">
           {description}
         </p>
       </CardHeader>
       <CardBody className="flex flex-col items-center gap-6">
+        <ReviewProduct productId={id} />
         <span className="text-2xl font-bold text-indigo-600">${price}</span>
       </CardBody>
       <CardFooter className="justify-around">
