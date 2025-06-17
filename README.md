@@ -6,36 +6,32 @@
 
 This is a **mobile-first e-commerce frontend application** built with [React](https://reactjs.org/), [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), and [HeroUI](https://heroui.dev/). The app is fully frontend-only — no backend — and uses local storage for persistence.
 
-## 🚀 Features
+## Features
 
-- ✅ Product catalog display
-- ✅ Individual product detail pages
-- ✅ Shopping cart with LocalStorage persistence
-- ✅ Add/remove favorites
-- ✅ Advanced product search and filtering
-- ✅ Simulated authentication (frontend-only)
-- ✅ Dark mode using Tailwind & HeroUI switch
-- ✅ Simulated checkout
-- ✅ Review system
-- ✅ Interactive notifications (toasts, alerts)
-
----
-
-## 📱 Tech Stack
-
-- ⚛️ React 18
-- ⚡ Vite
-- 🎨 Tailwind CSS
-- 🧩 HeroUI (`@heroui/react`)
-- 🗂️ React Router DOM
-- 🧠 React Context API & custom hooks
-- 💾 LocalStorage
+- Product catalog display
+- Individual product detail pages
+- Shopping cart with LocalStorage persistence
+- Add/remove favorites
+- Advanced product search and filtering
+- Simulated authentication (frontend-only)
+- Dark mode using Tailwind & HeroUI switch
+- Simulated checkout
+- Review system
+- Interactive notifications (toasts, alerts)
 
 ---
 
-## 📁 Project Structure
+## Tech Stack
 
+- React 18
+- Vite
+- Tailwind CSS
+- HeroUI (`@heroui/react`)
+- React Router DOM
+- React Context API & custom hooks
+- LocalStorage
 
+---
 
 Currently, two official plugins are available:
 
