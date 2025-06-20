@@ -1,22 +1,26 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@heroui/react";
-import ProductCard from "./ProductCard.jsx";
-import MotionDiv from "./MotionDiv.jsx";
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '@heroui/react'
+import ProductCard from './ProductCard.jsx'
+import MotionDiv from './MotionDiv.jsx'
 
 function BrandsGalery({ brandsData }) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1)
 
-  const brandsPerPage = 2;
-  const productsPerBrand = 3;
+  const brandsPerPage = 2
+  const productsPerBrand = 3
 
-  const brandsArray = Object.entries(brandsData);
-  const totalPages = Math.ceil(brandsArray.length / brandsPerPage);
-  const startIndex = (currentPage - 1) * brandsPerPage;
+  const brandsArray = Object.entries(brandsData)
+  const totalPages = Math.ceil(brandsArray.length / brandsPerPage)
+  const startIndex = (currentPage - 1) * brandsPerPage
   const currentBrands = brandsArray.slice(
     startIndex,
-    startIndex + brandsPerPage,
-  );
+    startIndex + brandsPerPage
+  )
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [currentPage])
 
   return (
     <>
@@ -72,7 +76,7 @@ function BrandsGalery({ brandsData }) {
         </div>
       )}
     </>
-  );
+  )
 }
 
-export default BrandsGalery;
+export default BrandsGalery
