@@ -1,9 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
-import LanguageSwitcher from "./LanguageSwitcher.jsx";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
+import LanguageSwitcher from './LanguageSwitcher.jsx'
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <footer className="bg-gray-100 px-4 py-3 dark:bg-gray-900">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 py-2 pb-3 text-center text-sm md:grid-cols-4 md:text-left">
@@ -19,24 +23,28 @@ function Footer() {
         <div className="space-y-3 text-center text-base">
           <Link
             to="/"
+            onClick={scrollToTop}
             className="block text-gray-500 hover:underline dark:text-gray-400"
           >
             Home
           </Link>
           <Link
             to="/favorites"
+            onClick={scrollToTop}
             className="block text-gray-500 hover:underline dark:text-gray-400"
           >
             Favorites
           </Link>
           <Link
             to="/cart"
+            onClick={scrollToTop}
             className="block text-gray-500 hover:underline dark:text-gray-400"
           >
             Cart
           </Link>
           <Link
             to="/login"
+            onClick={scrollToTop}
             className="block text-gray-500 hover:underline dark:text-gray-400"
           >
             Login
@@ -85,7 +93,7 @@ function Footer() {
         &copy; {new Date().getFullYear()} All rights reserved.
       </p>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
