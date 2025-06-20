@@ -1,19 +1,19 @@
-import React, { useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { FcPrevious, FcNext } from "react-icons/fc";
-import { Button, Image } from "@heroui/react";
+import React, { useCallback } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
+import { FcPrevious, FcNext } from 'react-icons/fc'
+import { Button, Image } from '@heroui/react'
 
 function ImageCarousel({ srcArray = [] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi],
-  );
+    [emblaApi]
+  )
   const scrollNext = useCallback(
     () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi],
-  );
+    [emblaApi]
+  )
 
   return (
     <div className="relative">
@@ -47,7 +47,7 @@ function ImageCarousel({ srcArray = [] }) {
         <FcNext />
       </Button>
     </div>
-  );
+  )
 }
 
-export default ImageCarousel;
+export default ImageCarousel
