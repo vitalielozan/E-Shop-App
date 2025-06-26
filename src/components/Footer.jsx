@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
+import { useAuthContext } from '../hooks/useAuthContext.js'
+import LogOut from './LogOut.jsx'
 
 function Footer() {
+  const { user } = useAuthContext()
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -24,31 +27,35 @@ function Footer() {
           <Link
             to="/"
             onClick={scrollToTop}
-            className="block text-gray-500 hover:underline dark:text-gray-400"
+            className="block text-large text-gray-500 hover:underline dark:text-gray-400"
           >
             Home
           </Link>
           <Link
             to="/favorites"
             onClick={scrollToTop}
-            className="block text-gray-500 hover:underline dark:text-gray-400"
+            className="block text-large text-gray-500 hover:underline dark:text-gray-400"
           >
             Favorites
           </Link>
           <Link
             to="/cart"
             onClick={scrollToTop}
-            className="block text-gray-500 hover:underline dark:text-gray-400"
+            className="block text-large text-gray-500 hover:underline dark:text-gray-400"
           >
             Cart
           </Link>
-          <Link
-            to="/login"
-            onClick={scrollToTop}
-            className="block text-gray-500 hover:underline dark:text-gray-400"
-          >
-            Login
-          </Link>
+          {!user ? (
+            <Link
+              to="/login"
+              onClick={scrollToTop}
+              className="block text-large text-gray-500 hover:underline dark:text-gray-400"
+            >
+              Login
+            </Link>
+          ) : (
+            <LogOut />
+          )}
         </div>
 
         <div className="space-y-5">

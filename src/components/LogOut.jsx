@@ -1,22 +1,19 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Button } from "@heroui/react";
-import { useAuthContext } from "../hooks/useAuthContext.js";
+import React from 'react'
+import { Link } from 'react-router'
+import { useAuthContext } from '../hooks/useAuthContext.js'
 
 function LogOut() {
-  const { logout } = useAuthContext();
-  const navigate = useNavigate();
-
-  const handleLogOut = () => {
-    logout();
-    navigate("/login");
-  };
+  const { logout } = useAuthContext()
 
   return (
-    <Button color="primary" variant="light" onPress={handleLogOut}>
+    <Link
+      to="/"
+      onClick={() => logout()}
+      className="text-medium text-gray-700 hover:underline dark:text-gray-300"
+    >
       LogOut
-    </Button>
-  );
+    </Link>
+  )
 }
 
-export default LogOut;
+export default LogOut

@@ -1,11 +1,14 @@
-import React from "react";
-import { motion as Motion, easeOut } from "framer-motion";
-import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar.jsx";
-import LogOut from "./LogOut.jsx";
-import ThemeToggle from "./ThemeToggle.jsx";
+import React from 'react'
+import { motion as Motion, easeOut } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar.jsx'
+import LogOut from './LogOut.jsx'
+import ThemeToggle from './ThemeToggle.jsx'
+import { useAuthContext } from '../hooks/useAuthContext.js'
 
 function AnimatedMobileMenu() {
+  const { user } = useAuthContext()
+
   return (
     <Motion.div
       initial={{ opacity: 0, y: -24 }}
@@ -32,17 +35,21 @@ function AnimatedMobileMenu() {
       >
         Cart
       </Link>
-      <Link
-        to="/login"
-        className="block text-sm text-gray-700 hover:underline dark:text-gray-300"
-      >
-        LogIn
-      </Link>
+      {!user ? (
+        <Link
+          to="/login"
+          className="block text-sm text-gray-700 hover:underline dark:text-gray-300"
+        >
+          LogIn
+        </Link>
+      ) : (
+        <LogOut />
+      )}
       <ThemeToggle />
-      <LogOut />
+
       <SearchBar />
     </Motion.div>
-  );
+  )
 }
 
-export default AnimatedMobileMenu;
+export default AnimatedMobileMenu

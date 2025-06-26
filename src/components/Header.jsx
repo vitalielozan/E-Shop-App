@@ -1,14 +1,17 @@
-import React from "react";
-import { Link } from "react-router";
-import { Avatar } from "@heroui/react";
-import { Disclosure, DisclosureButton } from "@headlessui/react";
-import { AnimatePresence } from "framer-motion";
-import AnimatedMobileMenu from "./AnimatedMobileMenu.jsx";
-import ThemeToggle from "./ThemeToggle.jsx";
-import SearchBar from "./SearchBar.jsx";
-import LogOut from "./LogOut.jsx";
+import React from 'react'
+import { Link } from 'react-router'
+import { Avatar } from '@heroui/react'
+import { Disclosure, DisclosureButton } from '@headlessui/react'
+import { AnimatePresence } from 'framer-motion'
+import AnimatedMobileMenu from './AnimatedMobileMenu.jsx'
+import ThemeToggle from './ThemeToggle.jsx'
+import SearchBar from './SearchBar.jsx'
+import LogOut from './LogOut.jsx'
+import { useAuthContext } from '../hooks/useAuthContext.js'
 
 function Header() {
+  const { user } = useAuthContext()
+
   return (
     <Disclosure as="nav" className="bg-white py-3 shadow dark:bg-gray-900">
       {({ open }) => (
@@ -38,14 +41,18 @@ function Header() {
               >
                 Cart
               </Link>
-              <Link
-                to="/login"
-                className="text-large text-gray-700 hover:underline dark:text-gray-300"
-              >
-                LogIn
-              </Link>
+              {!user ? (
+                <Link
+                  to="/login"
+                  className="text-large text-gray-700 hover:underline dark:text-gray-300"
+                >
+                  LogIn
+                </Link>
+              ) : (
+                <LogOut />
+              )}
               <SearchBar />
-              <LogOut />
+
               <ThemeToggle />
             </div>
 
@@ -60,7 +67,7 @@ function Header() {
         </>
       )}
     </Disclosure>
-  );
+  )
 }
 
-export default Header;
+export default Header

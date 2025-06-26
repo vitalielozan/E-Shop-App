@@ -1,10 +1,10 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useFetchProducts } from "../hooks/useFetchProducts.js";
-import { Heart, ShoppingCart, Trash2 } from "lucide-react";
-import { useCartFav } from "../hooks/useCartFav.js";
-import ImageCarousel from "../components/ImageCarousel.jsx";
-import ReviewProduct from "../components/ReviewProduct.jsx";
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { useFetchProducts } from '../hooks/useFetchProducts.js'
+import { Heart, ShoppingCart, Trash2 } from 'lucide-react'
+import { useCartFav } from '../hooks/useCartFav.js'
+import ImageCarousel from '../components/ImageCarousel.jsx'
+import ReviewProduct from '../components/ReviewProduct.jsx'
 import {
   Spinner,
   Button,
@@ -12,20 +12,20 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Image,
-} from "@heroui/react";
+  Image
+} from '@heroui/react'
 
 function ProductPage() {
-  const { id } = useParams();
+  const { id } = useParams()
   const {
     cart,
     favorites,
     addToCart,
     removeFromCart,
     addToFavorites,
-    removeFromFavorites,
-  } = useCartFav();
-  const { data: product, loading, error } = useFetchProducts("id", id);
+    removeFromFavorites
+  } = useCartFav()
+  const { data: product, loading, error } = useFetchProducts('id', id)
 
   if (loading)
     return (
@@ -37,22 +37,22 @@ function ProductPage() {
           labelColor="primary"
         />
       </div>
-    );
+    )
 
   if (error)
     return (
       <div className="py-10 text-center text-red-500">
         Error loading product.
       </div>
-    );
+    )
 
   if (!product || Array.isArray(product))
-    return <p className="py-10 text-center text-red-500">Product not found.</p>;
+    return <p className="py-10 text-center text-red-500">Product not found.</p>
 
-  const { title, description, price, images } = product;
-  const imagesArr = Array.isArray(images) ? images : [images];
-  const isInCart = cart.some((item) => item.id === Number(id));
-  const isInFavorites = favorites.some((item) => item.id === Number(id));
+  const { title, description, price, images } = product
+  const imagesArr = Array.isArray(images) ? images : [images]
+  const isInCart = cart.some((item) => item.id === id)
+  const isInFavorites = favorites.some((item) => item.id === id)
 
   return (
     <Card className="mx-auto max-w-2xl rounded-2xl bg-white/80 px-6 py-10 shadow-2xl dark:bg-gray-900/80 sm:px-8 lg:px-10">
@@ -93,17 +93,17 @@ function ProductPage() {
               : () => addToFavorites(product)
           }
           className={`rounded-full px-4 py-2 text-white shadow hover:scale-105 ${
-            isInFavorites ? "bg-pink-600" : "bg-gray-900"
+            isInFavorites ? 'bg-pink-600' : 'bg-gray-900'
           }`}
         >
           <Heart
             className="h-5 w-5"
-            fill={isInFavorites ? "currentColor" : "none"}
+            fill={isInFavorites ? 'currentColor' : 'none'}
           />
         </Button>
       </CardFooter>
     </Card>
-  );
+  )
 }
 
-export default ProductPage;
+export default ProductPage
