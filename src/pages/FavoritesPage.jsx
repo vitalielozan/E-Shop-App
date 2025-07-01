@@ -1,37 +1,38 @@
-import React, { useEffect } from "react";
-import MotionDiv from "../components/MotionDiv.jsx";
-import EmptyMasage from "../components/EmptyMasage.jsx";
-import { messages } from "../constants/constants.js";
-import { ShoppingCart, Trash2 } from "lucide-react";
-import { useNavigate } from "react-router";
-import { useCartFav } from "../hooks/useCartFav.js";
-import { useAuthContext } from "../hooks/useAuthContext.js";
-import { toast } from "react-toastify";
+import React, { useEffect } from 'react'
+import MotionDiv from '../components/MotionDiv.jsx'
+import EmptyMasage from '../components/EmptyMasage.jsx'
+import { messages } from '../constants/constants.js'
+import { ShoppingCart, Trash2 } from 'lucide-react'
+import { useNavigate } from 'react-router'
+import { useCartFav } from '../hooks/useCartFav.js'
+import { useAuthContext } from '../hooks/useAuthContext.js'
+import { toast } from 'react-toastify'
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Button,
-  Image,
-} from "@heroui/react";
+  Image
+} from '@heroui/react'
+
 function FavoritesPage() {
-  const navigate = useNavigate();
-  const { cart, favorites, addToCart, removeFromFavorites } = useCartFav();
-  const { isLoggedIn } = useAuthContext();
+  const navigate = useNavigate()
+  const { cart, favorites, addToCart, removeFromFavorites } = useCartFav()
+  const { isLoggedIn } = useAuthContext()
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/login");
+      navigate('/login')
     }
-  }, [navigate, isLoggedIn]);
+  }, [navigate, isLoggedIn])
 
   const handleAddToCartFromFavorite = (product) => {
     if (cart.some((item) => item.id === product.id)) {
-      toast.warning("Product already in cart!");
-      return;
+      toast.warning('Product already in cart!')
+      return
     }
-    addToCart(product);
-  };
+    addToCart(product)
+  }
 
   return (
     <div className="p-3 text-center">
@@ -85,7 +86,7 @@ function FavoritesPage() {
         </MotionDiv>
       )}
     </div>
-  );
+  )
 }
 
-export default FavoritesPage;
+export default FavoritesPage

@@ -16,7 +16,7 @@ function Header() {
     <Disclosure as="nav" className="bg-white py-3 shadow dark:bg-gray-900">
       {({ open }) => (
         <>
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-4 px-4 py-3">
             <Avatar size="lg" radius="md" src="/avatar.png" />
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
               <Link to="/">TV-Maxx</Link>

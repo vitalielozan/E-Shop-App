@@ -97,7 +97,7 @@ function Footer() {
       <hr className="mx-10 my-4 border-t border-gray-700 dark:border-gray-500" />
 
       <p className="py-2 text-center text-gray-600 dark:text-gray-400">
-        &copy; {new Date().getFullYear()} All rights reserved.
+        &copy; {new Date().getFullYear()} All rights reserved by Vitalie Lozan.
       </p>
     </footer>
   )

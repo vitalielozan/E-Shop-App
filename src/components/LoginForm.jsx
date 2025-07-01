@@ -1,29 +1,30 @@
-import React, { useState } from "react";
-import { Form, Input, Button } from "@heroui/react";
-import { useNavigate } from "react-router";
-import { useAuthContext } from "../hooks/useAuthContext.js";
-import { toast } from "react-toastify";
+import React, { useState } from 'react'
+import { Form, Input, Button } from '@heroui/react'
+import { useNavigate } from 'react-router'
+import { useAuthContext } from '../hooks/useAuthContext.js'
+import { toast } from 'react-toastify'
 
 function LoginForm() {
-  const [error, setError] = useState(null);
-  const { users, login } = useAuthContext();
-  const navigate = useNavigate();
+  const [error, setError] = useState(null)
+  const { users, login } = useAuthContext()
+  const navigate = useNavigate()
+
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+    event.preventDefault()
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
     const foundUser = users.find(
-      (user) => user.email === data.email && user.password === data.password,
-    );
+      (user) => user.email === data.email && user.password === data.password
+    )
     if (foundUser) {
-      login(foundUser);
-      toast.success(`Wellcome dear ! ${foundUser.email}`);
-      navigate("/");
+      login(foundUser)
+      toast.success(`Wellcome dear ! ${foundUser.email}`)
+      navigate('/')
     } else {
-      setError("Incorrect email or password.");
+      setError('Incorrect email or password.')
     }
-  };
+  }
 
   return (
     <Form
@@ -58,7 +59,7 @@ function LoginForm() {
         <div className="pt-2 text-sm font-medium text-red-500">{error}</div>
       )}
     </Form>
-  );
+  )
 }
 
-export default LoginForm;
+export default LoginForm

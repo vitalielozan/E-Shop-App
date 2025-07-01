@@ -1,53 +1,53 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 import {
   fetchAllProducts,
   fetchProductsByBrand,
   fetchProductById,
-  fetchRawProductsData,
-} from "../lib/api.js";
+  fetchRawProductsData
+} from '../services/api.js'
 
-export const useFetchProducts = (type = "all", param = null, delay = 500) => {
-  const [data, setData] = useState(type === "id" ? null : []);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+export const useFetchProducts = (type = 'all', param = null, delay = 500) => {
+  const [data, setData] = useState(type === 'id' ? null : [])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    let timeoutId;
+    let timeoutId
     const fetchData = async () => {
       try {
-        let result;
+        let result
 
         switch (type) {
-          case "all":
-            result = await fetchAllProducts();
-            break;
-          case "raw":
-            result = await fetchRawProductsData();
-            break;
-          case "brand":
-            result = await fetchProductsByBrand(param);
-            break;
-          case "id":
-            result = await fetchProductById(param);
-            break;
+          case 'all':
+            result = await fetchAllProducts()
+            break
+          case 'raw':
+            result = await fetchRawProductsData()
+            break
+          case 'brand':
+            result = await fetchProductsByBrand(param)
+            break
+          case 'id':
+            result = await fetchProductById(param)
+            break
           default:
-            throw new Error("Unknow fetching type.");
+            throw new Error('Unknow fetching type.')
         }
 
-        setData(result);
+        setData(result)
       } catch (err) {
-        setError(err);
+        setError(err)
       } finally {
         timeoutId = setTimeout(() => {
-          setLoading(false);
-        }, delay);
+          setLoading(false)
+        }, delay)
       }
-    };
+    }
 
-    fetchData();
+    fetchData()
 
-    return () => clearTimeout(timeoutId);
-  }, [type, param, delay]);
+    return () => clearTimeout(timeoutId)
+  }, [type, param, delay])
 
-  return { data, loading, error };
-};
+  return { data, loading, error }
+}
