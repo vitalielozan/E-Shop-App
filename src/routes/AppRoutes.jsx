@@ -1,15 +1,16 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import MainLayout from "../layout/MainLayout.jsx";
-import HomePage from "../pages/HomePage.jsx";
-import CartPage from "../pages/CartPage.jsx";
-import FavoritesPage from "../pages/FavoritesPage.jsx";
-import ProductPage from "../pages/ProductPage.jsx";
-import CheckoutPage from "../pages/CheckoutPage.jsx";
-import LoginPage from "../pages/LoginPage.jsx";
-import BrandPage from "../pages/BrandPage.jsx";
-import NotFoundPage from "../pages/NotFoundPage.jsx";
-import SearchPage from "../pages/SearchPage.jsx";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import MainLayout from '../layout/MainLayout.jsx'
+import HomePage from '../pages/HomePage.jsx'
+import CartPage from '../pages/CartPage.jsx'
+import FavoritesPage from '../pages/FavoritesPage.jsx'
+import ProductPage from '../pages/ProductPage.jsx'
+import CheckoutPage from '../pages/CheckoutPage.jsx'
+import LoginPage from '../pages/LoginPage.jsx'
+import SignupPage from '../pages/SignupPage.jsx'
+import BrandPage from '../pages/BrandPage.jsx'
+import NotFoundPage from '../pages/NotFoundPage.jsx'
+import SearchPage from '../pages/SearchPage.jsx'
 
 function AppRoutes() {
   return (
@@ -25,10 +26,11 @@ function AppRoutes() {
       </Route>
 
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-  );
+  )
 }
 
-export default AppRoutes;
+export default AppRoutes
