@@ -6,7 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext.js'
 import LogOut from './LogOut.jsx'
 
 function Footer() {
-  const { user } = useAuthContext()
+  const { users, isLoggedIn } = useAuthContext()
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -45,17 +45,25 @@ function Footer() {
           >
             Cart
           </Link>
-          {!user ? (
+          {users.length === 0 && (
+            <Link
+              to="/signup"
+              onClick={scrollToTop}
+              className="block text-large text-gray-500 hover:underline dark:text-gray-400"
+            >
+              SognUp
+            </Link>
+          )}
+          {users.length > 0 && (
             <Link
               to="/login"
               onClick={scrollToTop}
               className="block text-large text-gray-500 hover:underline dark:text-gray-400"
             >
-              Login
+              LogIn
             </Link>
-          ) : (
-            <LogOut />
           )}
+          {isLoggedIn && <LogOut />}
         </div>
 
         <div className="space-y-5">

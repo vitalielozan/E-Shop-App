@@ -18,6 +18,7 @@ function LoginForm() {
       (user) => user.email === data.email && user.password === data.password
     )
     if (foundUser) {
+      console.log(foundUser)
       login(foundUser)
       toast.success(`Wellcome dear ! ${foundUser.email}`)
       navigate('/')

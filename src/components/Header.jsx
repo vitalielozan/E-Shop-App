@@ -10,8 +10,7 @@ import LogOut from './LogOut.jsx'
 import { useAuthContext } from '../hooks/useAuthContext.js'
 
 function Header() {
-  const { user, isLoggedIn } = useAuthContext()
-
+  const { users, isLoggedIn } = useAuthContext()
   return (
     <Disclosure as="nav" className="bg-white py-3 shadow dark:bg-gray-900">
       {({ open }) => (
@@ -41,25 +40,24 @@ function Header() {
               >
                 Cart
               </Link>
-              {!user ? (
+              {users.length === 0 && (
                 <Link
                   to="/signup"
                   className="text-large text-gray-700 hover:underline dark:text-gray-300"
                 >
                   SignUp
                 </Link>
-              ) : !isLoggedIn ? (
+              )}
+              {users.length > 0 && !isLoggedIn && (
                 <Link
                   to="/login"
                   className="text-large text-gray-700 hover:underline dark:text-gray-300"
                 >
                   LogIn
                 </Link>
-              ) : (
-                <LogOut />
               )}
+              {isLoggedIn && <LogOut />}
               <SearchBar />
-
               <ThemeToggle />
             </div>
 

@@ -7,7 +7,7 @@ import ThemeToggle from './ThemeToggle.jsx'
 import { useAuthContext } from '../hooks/useAuthContext.js'
 
 function AnimatedMobileMenu() {
-  const { user, isLoggedIn } = useAuthContext()
+  const { users, isLoggedIn } = useAuthContext()
 
   return (
     <Motion.div
@@ -35,23 +35,23 @@ function AnimatedMobileMenu() {
       >
         Cart
       </Link>
-      {!user ? (
+      {users.length === 0 && (
         <Link
           to="/signup"
           className="block text-sm text-gray-700 hover:underline dark:text-gray-300"
         >
           SignUp
         </Link>
-      ) : !isLoggedIn ? (
+      )}
+      {users.length > 0 && !isLoggedIn && (
         <Link
           to="/login"
           className="block text-sm text-gray-700 hover:underline dark:text-gray-300"
         >
           LogIn
         </Link>
-      ) : (
-        <LogOut />
       )}
+      {isLoggedIn && <LogOut />}
       <ThemeToggle />
 
       <SearchBar />

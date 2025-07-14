@@ -1,49 +1,52 @@
-import React, { useState } from "react";
-import { Form, Input, Button } from "@heroui/react";
-import { useAuthContext } from "../hooks/useAuthContext.js";
+import React, { useState } from 'react'
+import { Form, Input, Button } from '@heroui/react'
+import { useAuthContext } from '../hooks/useAuthContext.js'
+import { useNavigate } from 'react-router'
 
 function RegisterForm({ onRegisterSuccess }) {
-  const [action, setAction] = useState(null);
-  const { users, setUsers } = useAuthContext();
+  const navigate = useNavigate()
+  const [action, setAction] = useState(null)
+  const { users, setUsers } = useAuthContext()
   const validatePassword = (value) => {
-    if (value.length < 6) return "Password must be at 6 characters";
-    if (!/A-Z/.test(value))
-      return "Mast caontain at least one uppercase letter";
-    if (!/0=9/.test(value)) return "Mast caontain at least one number";
+    if (value.length < 6) return 'Password must be at 6 characters'
+    if (!/[A-Z]/.test(value))
+      return 'Mast caontain at least one uppercase letter'
+    if (!/[0=9]/.test(value)) return 'Mast caontain at least one number'
     if (!/[!@#$%^&*(),._<>:|?{}]/.test(value))
-      return "Mast caontain at least one simbol";
-    return null;
-  };
+      return 'Mast caontain at least one simbol'
+    return null
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    const alreadyExists = users.some((user) => user.email === data.email);
+    event.preventDefault()
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+    const alreadyExists = users.some((user) => user.email === data.email)
     if (alreadyExists) {
-      setAction("This email is already registered!");
+      setAction('This email is already registered!')
     } else {
       setUsers((prevUsers) => {
-        const updatedUsers = [...prevUsers, data];
-        localStorage.setItem("users", JSON.stringify(updatedUsers));
-        return updatedUsers;
-      });
-      setAction("Account created successfully! You can now log in.");
-
+        const updatedUsers = [...prevUsers, data]
+        localStorage.setItem('users', JSON.stringify(updatedUsers))
+        return updatedUsers
+      })
+      setAction('Account created successfully! You can now log in.')
       setTimeout(() => {
         if (onRegisterSuccess) {
-          onRegisterSuccess();
+          onRegisterSuccess()
         }
-      }, 1000);
+        navigate('/login')
+      }, 1000)
     }
-  };
+  }
 
   return (
     <Form
       validationBehavior="aria"
       className="flex w-full max-w-xs flex-col gap-4"
-      onReset={() => setAction("Form reset.")}
+      onReset={() => setAction('Form reset.')}
       onSubmit={handleSubmit}
     >
       <Input
@@ -55,8 +58,8 @@ function RegisterForm({ onRegisterSuccess }) {
         placeholder="Enter your email"
         type="email"
         validate={(value) => {
-          if (!value.includes("@")) return "Must be a valid email";
-          return null;
+          if (!value.includes('@')) return 'Must be a valid email'
+          return null
         }}
       />
 
@@ -85,7 +88,7 @@ function RegisterForm({ onRegisterSuccess }) {
         </div>
       )}
     </Form>
-  );
+  )
 }
 
-export default RegisterForm;
+export default RegisterForm
