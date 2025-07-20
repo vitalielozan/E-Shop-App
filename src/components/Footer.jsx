@@ -45,7 +45,15 @@ function Footer() {
           >
             Cart
           </Link>
-
+          {users.length === 0 && (
+            <Link
+              to="/signup"
+              onClick={scrollToTop}
+              className="block text-large text-gray-500 hover:underline dark:text-gray-400"
+            >
+              SignUp
+            </Link>
+          )}
           {users.length > 0 && !isLoggedIn && (
             <Link
               to="/login"

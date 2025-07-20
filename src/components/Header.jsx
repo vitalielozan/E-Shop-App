@@ -40,6 +40,14 @@ function Header() {
               >
                 Cart
               </Link>
+              {users.length === 0 && (
+                <Link
+                  to="/signup"
+                  className="text-large text-gray-700 hover:underline dark:text-gray-300"
+                >
+                  SignUp
+                </Link>
+              )}
               {users.length > 0 && !isLoggedIn && (
                 <Link
                   to="/login"
