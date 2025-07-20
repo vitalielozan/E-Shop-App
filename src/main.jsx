@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HeroUIProvider } from '@heroui/react'
-import './i18n.js'
 import App from './App.jsx'
 import AppProviders from './components/AppProviders.jsx'
 

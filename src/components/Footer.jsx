@@ -54,7 +54,7 @@ function Footer() {
               SognUp
             </Link>
           )}
-          {users.length > 0 && (
+          {users.length > 0 && !isLoggedIn && (
             <Link
               to="/login"
               onClick={scrollToTop}

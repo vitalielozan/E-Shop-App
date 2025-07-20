@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Form, Input, Button } from '@heroui/react'
 import { useNavigate } from 'react-router'
 import { useAuthContext } from '../hooks/useAuthContext.js'
@@ -18,7 +19,6 @@ function LoginForm() {
       (user) => user.email === data.email && user.password === data.password
     )
     if (foundUser) {
-      console.log(foundUser)
       login(foundUser)
       toast.success(`Wellcome dear ! ${foundUser.email}`)
       navigate('/')
@@ -54,6 +54,12 @@ function LoginForm() {
         </Button>
         <Button type="reset" variant="flat">
           Reset
+        </Button>
+        <Button variant="flat">
+          Don't have an account?
+          <Link className="font-medium text-emerald-500 underline" to="/signup">
+            SignUp
+          </Link>
         </Button>
       </div>
       {error && (
