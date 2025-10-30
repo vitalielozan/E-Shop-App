@@ -1,7 +1,7 @@
-@tailwind base;
+ @import "tailwindcss";
 
-@tailwind components;
+ @plugin '../hero.ts';
 
-@tailwind utilities;
+ @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 
-@custom-variant dark (&:where(.dark, .dark *));
+ @custom-variant dark (&:is(.dark *));
